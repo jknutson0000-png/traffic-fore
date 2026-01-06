@@ -1,0 +1,5 @@
+{
+  "name": "Copy of Marietta St Traffic Command",
+  "description": "Real-time event and traffic impact analyzer for 20 Marietta St NW utilizing Gemini Search Grounding.",
+  "requestFramePermissions": []
+}
