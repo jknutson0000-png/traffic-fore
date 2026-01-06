@@ -261,7 +261,7 @@ const App: React.FC = () => {
                           rel="noreferrer" 
                           className="text-xs text-slate-500 hover:text-red-500 truncate block font-mono hover:underline"
                         >
-                          > {title}
+                          &gt; {title}
                         </a>
                       </li>
                      );

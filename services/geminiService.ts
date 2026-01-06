@@ -131,8 +131,11 @@ export const checkTrafficConditions = async (mode: 'LIVE' | 'FORECAST' = 'LIVE')
       }
     });
 
-    const jsonText = response.text;
+    let jsonText = response.text;
     if (!jsonText) throw new Error("No data received from Gemini.");
+
+    // Sanitize markdown if present
+    jsonText = jsonText.replace(/^```json\s*/, '').replace(/\s*```$/, '');
 
     const data = JSON.parse(jsonText) as Omit<TrafficAnalysis, 'lastUpdated'>;
     const sources = response.candidates?.[0]?.groundingMetadata?.groundingChunks || [];
