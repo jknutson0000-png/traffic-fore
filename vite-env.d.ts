@@ -1,7 +1,7 @@
-// Fixed: Removed missing 'vite/client' reference and added process.env type definition
-declare var process: {
-  env: {
+// Augment the NodeJS namespace to strongly type process.env
+declare namespace NodeJS {
+  interface ProcessEnv {
     API_KEY: string;
     [key: string]: string | undefined;
   }
-};
+}
